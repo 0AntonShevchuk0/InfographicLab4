@@ -1,0 +1,86 @@
+﻿<Window x:Class="InfographicLab4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InfographicLab4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1600">
+    <Window.Background>
+        <LinearGradientBrush
+            StartPoint="0.5, 0"
+            EndPoint="0.5, 1">
+            <GradientStop
+                Color="#00000F"
+                Offset="0.0" />
+            <GradientStop
+                Color="#00FFFF"
+                Offset="5.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <Style TargetType="RowDefinition" x:Key="ContentRowDefinition">
+            <Setter Property="Height" Value="125"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="600"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" HorizontalAlignment="Center">
+            <Label Margin="0, 25, 0, 0" Content="The top-selling smartphone brands in 2022" Foreground="AliceBlue" FontStyle="Italic" FontSize="48"/>
+        </Grid>
+        <Grid Grid.Row="1" Margin="25, 0, 0, 0" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Style="{StaticResource ContentRowDefinition}"/>
+                <RowDefinition Style="{StaticResource ContentRowDefinition}"/>
+                <RowDefinition Style="{StaticResource ContentRowDefinition}"/>
+                <RowDefinition Style="{StaticResource ContentRowDefinition}"/>
+                <RowDefinition Style="{StaticResource ContentRowDefinition}"/>
+            </Grid.RowDefinitions>
+
+            <local:AnimatedRectangleControl
+                Grid.Row="0"
+                NameText="21.2%"
+                RectangleColor="#3F5FDF"
+                RectangleStartWidth="200"
+                RectangleEndWidth="848"
+                TextColor="AliceBlue"
+                ImageSource="/Images/Samsung.png"/>
+            <local:AnimatedRectangleControl
+                Grid.Row="1"
+                NameText="17.2%"
+                RectangleColor="#7F7F7F"
+                RectangleStartWidth="200"
+                RectangleEndWidth="608"
+                TextColor="AliceBlue"
+                ImageSource="/Images/Apple.jpg"/>
+            <local:AnimatedRectangleControl
+                Grid.Row="2"
+                NameText="13.4%"
+                RectangleColor="#DF9F3F"
+                RectangleStartWidth="200"
+                RectangleEndWidth="536"
+                TextColor="AliceBlue"
+                ImageSource="/Images/Xiaomi.png"/>
+            <local:AnimatedRectangleControl
+                Grid.Row="3"
+                NameText="8.6%"
+                RectangleColor="#7FBF7F"
+                RectangleStartWidth="200"
+                RectangleEndWidth="344"
+                TextColor="AliceBlue"
+                ImageSource="/Images/Oppo.jpg"/>
+            <local:AnimatedRectangleControl
+                Grid.Row="4"
+                NameText="8.6%"
+                RectangleColor="#7FAFDF"
+                RectangleStartWidth="200"
+                RectangleEndWidth="344"
+                TextColor="AliceBlue"
+                ImageSource="/Images/Vivo.jpg"/>
+        </Grid>
+    </Grid>
+</Window>
